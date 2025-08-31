@@ -23,12 +23,15 @@ a {
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px;
-    background-color: transparent;
+    background: rgba(0, 0, 0, 0.3); /* Transparent dark background */
+    backdrop-filter: blur(10px); /* Blurry glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
     position: fixed; /* Fixes it at the top */
     top: 0; /* Stick to top */
     left: 0;
     width: 100%;
     z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Optional subtle border */
 }
 
 .logo {
