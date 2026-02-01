@@ -7,15 +7,38 @@
     <title>
         Ujjwal Agrawal - Software/FullStack Developer
     </title>
-    <link rel="icon" type="image/x-icon" href="Files/Images/profile.png" alt="Ujjwal">
+    <link rel="icon" type="image/x-icon" href="Files/Images/profile_red.png" alt="Ujjwal">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="spinner"></div>
+            <p>Loading Portfolio...</p>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
     <header>
         <div class="navbar">
             <div class="logo">Ujjwal Agrawal</div>
-            <nav>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav id="nav-menu">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#technology">Technologies</a></li>
@@ -28,49 +51,70 @@
     </header>
 
     <section class="hero">
-        <div class="hero-text">
-            <p>Hola amigos<span class="dot">...</span></p>
-            <h1>I’m Ujjwal</h1>
-            <h2>Software Developer</h2>
-            <h2>FullStack Developer</h2>
+        <div class="background-decoration"></div>
+        <div class="hero-text fade-in">
+            <p class="greeting">Hola amigos<span class="dot">...</span></p>
+            <h1>I'm <span class="highlight">Ujjwal</span></h1>
+            <h2 class="typing-container">
+                <span id="typed-text"></span>
+                <span class="cursor">|</span>
+            </h2>
+            <p class="hero-subtitle">Crafting digital solutions with passion and precision</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn primary-btn">Got a project?</a>
-                <a href="Files/Ujjwal_Agrawal_resume.pdf" class="btn secondary-btn" download>My resume</a>
+                <a href="#contact" class="btn primary-btn">
+                    <i class="fas fa-rocket"></i> Got a project?
+                </a>
+                <a href="Files/Resume_UJJWAL_AGRAWAL.pdf" class="btn secondary-btn" download>
+                    <i class="fas fa-download"></i> My resume
+                </a>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="Files/Images/profile.png" alt="Ujjwal">
+        <div class="hero-image slide-in-right">
+            <div class="image-wrapper">
+                <img src="Files/Images/profile_red.png" alt="Ujjwal">
+                <div class="floating-icons">
+                    <i class="fas fa-code icon-float"></i>
+                    <i class="fas fa-laptop-code icon-float"></i>
+                    <i class="fas fa-mobile-alt icon-float"></i>
+                </div>
+            </div>
         </div>
     </section>
 
     <div id="technology" class="skills-bar">
         <ul>
-            <li>Java</li>
-            <li>Python</li>
-            <li>HTML5</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Node.js</li>
-            <li>Express.js</li>
-            <li>React</li>
-            <li>Github</li>
+            <li class="skill-item"><i class="fab fa-java"></i> Java</li>
+            <li class="skill-item"><i class="fab fa-python"></i> Python</li>
+            <li class="skill-item"><i class="fab fa-html5"></i> HTML5</li>
+            <li class="skill-item"><i class="fab fa-css3-alt"></i> CSS</li>
+            <li class="skill-item"><i class="fab fa-js"></i> JavaScript</li>
+            <li class="skill-item"><i class="fab fa-node-js"></i> Node.js</li>
+            <li class="skill-item"><i class="fab fa-node"></i> Express.js</li>
+            <li class="skill-item"><i class="fab fa-react"></i> React</li>
+            <li class="skill-item"><i class="fas fa-database"></i> MongoDB</li>
+            <li class="skill-item"><i class="fas fa-database"></i> SQL</li>
+            <li class="skill-item"><i class="fas fa-brain"></i> Machine Learning</li>
+            <li class="skill-item"><i class="fab fa-github"></i> Github</li>
         </ul>
     </div>
 
     <section id="about" class="about">
-        <div class="services">
+        <div class="services reveal-left">
             <div class="service">
+                <i class="fas fa-globe service-icon"></i>
                 <p>Website Development</p>
             </div>
             <div class="service">
+                <i class="fas fa-coffee service-icon"></i>
                 <p>Java Developer</p>
             </div>
             <div class="service">
+                <i class="fas fa-server service-icon"></i>
                 <p>Website Hosting</p>
             </div>
         </div>
 
-        <div class="about-me">
+        <div class="about-me reveal-right">
             <h3>About me</h3>
             <p>
                 I am an aspiring Software Engineer with hands-on experience in full-stack
@@ -78,45 +122,72 @@
                 opportunities for learning and growth while working collaboratively with teams
             </p>
             <div class="stats">
-                <div><span>200+</span><br>Leetcode Questions</div>
-                <div><span>1100+</span><br>CodeForces Rating</div>
-                <div><span>5+</span><br>Projects Experience</div>
+                <div class="stat-item">
+                    <span class="counter" data-target="400">0</span>+<br>
+                    <i class="fas fa-code"></i> Leetcode Questions
+                </div>
+                <div class="stat-item">
+                    <span class="counter" data-target="1200">0</span>+<br>
+                    <i class="fas fa-trophy"></i> CodeForces Rating
+                </div>
+                <div class="stat-item">
+                    <span class="counter" data-target="5">0</span>+<br>
+                    <i class="fas fa-project-diagram"></i> Projects Experience
+                </div>
             </div>
         </div>
     </section>
 
     <section id="projects" class="projects">
-        <h2 class="section-title">Projects</h2>
+        <h2 class="section-title reveal-fade">Projects</h2>
         <div class="projects-container">
 
-            <div class="project-card">
-                <h3>Online E-Commerce Website</h3>
-                <p class="project-meta">Online</p>
+            <div class="project-card reveal-fade">
+                <div class="project-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>AI-Powered Smart Home Security System</h3>
+                <p class="project-meta"><i class="fas fa-globe"></i> Online</p>
                 <p class="project-desc">
-                    Developed a full-stack e-commerce website using Node.js, Express, and MongoDB.
-                    It includes user authentication, product management, and a secure checkout system.
+                    AI-based home security system using Python, Flask, and OpenCV.<br>
+        Real-time face recognition, motion detection, and SMS alerts via Twilio.<br>
+        React dashboard for live monitoring and face management.
                 </p>
-                <a href="https://github.com/Ujjwal1248?tab=repositories" class="project-btn">View Project</a>
+                <a href="https://github.com/Ujjwal1248?tab=repositories" class="project-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Project
+                </a>
             </div>
 
-            <div class="project-card">
-                <h3>Educational Website</h3>
-                <p class="project-meta">Online</p>
+            <div class="project-card reveal-fade">
+                <div class="project-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Deepfake Video Detection System</h3>
+                <p class="project-meta"><i class="fas fa-globe"></i> Online</p>
                 <p class="project-desc">
-                    Created a comprehensive educational platform for course browsing and enrollment.
-                    Integrated user-friendly navigation and secure payment systems.
+                     Deep learning system for detecting deepfake videos.<br>
+        Used InceptionV3 with CNN-based frame-level classification.<br>
+        Flask interface for video upload and confidence prediction.
                 </p>
-                <a href="https://github.com/Ujjwal1248?tab=repositories" class="project-btn">View Project</a>
+                <a href="https://github.com/Ujjwal1248?tab=repositories" class="project-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Project
+                </a>
             </div>
 
-            <div class="project-card">
-                <h3>Website Clones</h3>
-                <p class="project-meta">Online</p>
+            <div class="project-card reveal-fade">
+                <div class="project-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h3>E-Commerce Web Application</h3>
+                <p class="project-meta"><i class="fas fa-globe"></i> Online</p>
                 <p class="project-desc">
-                    Developed clones of popular websites like Amazon and Netflix.
-                    Mimicked design, features, and user experience including product listings and user authentication.
+                    Full-stack e-commerce platform using Node.js and MongoDB.<br>
+        Features authentication, product management, cart, and wallet system.<br>
+        Dynamic checkout with bargaining and inventory tracking.
                 </p>
-                <a href="https://github.com/Ujjwal1248?tab=repositories" class="project-btn">View Project</a>
+                <a href="https://github.com/Ujjwal1248?tab=repositories" class="project-btn" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> View Project
+                </a>
             </div>
 
         </div>
@@ -124,25 +195,30 @@
 
 
     <section id="contact" class="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <p class="contact-subtitle">Feel free to drop me a message. I’ll get back to you as soon as possible!</p>
-        <form action="https://formspree.io/f/mldnkjoz" method="POST" class="contact-form">
+        <h2 class="section-title reveal-fade">Get In Touch</h2>
+        <p class="contact-subtitle reveal-fade">Feel free to drop me a message. I'll get back to you as soon as possible!</p>
+        <form action="https://formspree.io/f/mldnkjoz" method="POST" class="contact-form reveal-fade">
             <div class="form-group">
+                <i class="fas fa-user form-icon"></i>
                 <input type="text" name="name" placeholder="Your Name" required>
             </div>
             <div class="form-group">
+                <i class="fas fa-envelope form-icon"></i>
                 <input type="email" name="_replyto" placeholder="Your Email" required>
             </div>
             <div class="form-group">
+                <i class="fas fa-comment-dots form-icon"></i>
                 <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
             </div>
-            <button type="submit" class="submit-btn">Send Message</button>
+            <button type="submit" class="submit-btn">
+                <i class="fas fa-paper-plane"></i> Send Message
+            </button>
         </form>
     </section>
 
     <section class="social-media">
-        <h2 class="section-title">Connect with Me</h2>
-        <div class="social-icons">
+        <h2 class="section-title reveal-fade">Connect with Me</h2>
+        <div class="social-icons reveal-fade">
             <a href="https://github.com/ujjwal1248" target="_blank" class="social-link">
                 <img src="Files/Images/Social/github.png" alt="GitHub">
             </a>
@@ -159,22 +235,222 @@
     </section>
 
     <section id="leetcode-stats" class="leetcode" data-username="YOUR_USERNAME">
-    <h2 class="section-title">Coding PlatForm Stats</h2>
-    <img src="https://leetcard.jacoblin.cool/ujjwalagrawal1248" alt="LeetCode Stats" />
-    <img src="https://github-readme-activity-graph.vercel.app/graph?username=ujjwal1248&bg_color=0d1117cc,0f2027cc,203a43cc,2c5364cc&color=ffffff&line=00bfff&point=ff6ec7&area=true&hide_border=true" alt="Github Stats">
-    <img src="https://codeforces-readme-stats.vercel.app/api/card?username=ujjwalpro1212&bg_color=1212124D&title_color=ffffff&text_color=ffffff&icon_color=00bfff" alt="Codeforces Stats">
+        <h2 class="section-title reveal-fade">Coding Platform Stats</h2>
+        <div class="stats-container reveal-fade">
+            <img src="https://leetcard.jacoblin.cool/ujjwalagrawal1248" alt="LeetCode Stats" class="stat-image" />
+            <img src="https://github-readme-activity-graph.vercel.app/graph?username=ujjwal1248&bg_color=0d1117cc,0f2027cc,203a43cc,2c5364cc&color=ffffff&line=00bfff&point=ff6ec7&area=true&hide_border=true" alt="Github Stats" class="stat-image">
+            <img src="https://codeforces-readme-stats.vercel.app/api/card?username=ujjwalpro1212&bg_color=1212124D&title_color=ffffff&text_color=ffffff&icon_color=00bfff" alt="Codeforces Stats" class="stat-image">
+        </div>
     </section>
 </body>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    window.addEventListener('scroll', function () {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+    // ========== LOADING SCREEN ==========
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            document.getElementById('loading-screen').style.opacity = '0';
+            setTimeout(() => {
+                document.getElementById('loading-screen').style.display = 'none';
+            }, 500);
+        }, 1000);
+    });
 
+    // ========== PARTICLES BACKGROUND ==========
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: '#ff4c60' },
+            shape: { type: 'circle' },
+            opacity: { value: 0.5, random: false },
+            size: { value: 3, random: true },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#ff4c60',
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: false,
+                straight: false,
+                out_mode: 'out',
+                bounce: false
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'repulse' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            },
+            modes: {
+                repulse: { distance: 100, duration: 0.4 },
+                push: { particles_nb: 4 }
+            }
+        },
+        retina_detect: true
+    });
+
+    // ========== TYPING ANIMATION ==========
+    const texts = ['Software Developer', 'FullStack Developer', 'Problem Solver', 'Code Enthusiast'];
+    let textIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typedTextElement = document.getElementById('typed-text');
+
+    function type() {
+        const currentText = texts[textIndex];
+        
+        if (isDeleting) {
+            typedTextElement.textContent = currentText.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typedTextElement.textContent = currentText.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        if (!isDeleting && charIndex === currentText.length) {
+            setTimeout(() => isDeleting = true, 2000);
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            textIndex = (textIndex + 1) % texts.length;
+        }
+
+        const typingSpeed = isDeleting ? 50 : 100;
+        setTimeout(type, typingSpeed);
+    }
+
+    setTimeout(type, 1000);
+
+    // ========== HAMBURGER MENU ==========
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', function () {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
+    });
+
+    // ========== NAVBAR SCROLL EFFECT ==========
+    window.addEventListener('scroll', function () {
+        const navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // ========== SCROLL TO TOP BUTTON ==========
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ========== SCROLL REVEAL ANIMATIONS ==========
+    function reveal() {
+        const reveals = document.querySelectorAll('.reveal-fade, .reveal-left, .reveal-right, .skill-item, .project-card, .stat-item');
+        
+        reveals.forEach(element => {
+            const windowHeight = window.innerHeight;
+            const elementTop = element.getBoundingClientRect().top;
+            const elementVisible = 150;
+            
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', reveal);
+    reveal();
+
+    // ========== COUNTER ANIMATION ==========
+    function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const increment = target / 100;
+        let current = 0;
+        
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                element.textContent = Math.ceil(current);
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target;
+            }
+        };
+        
+        updateCounter();
+    }
+
+    const counters = document.querySelectorAll('.counter');
+    let countersAnimated = false;
+
+    function checkCounters() {
+        if (countersAnimated) return;
+        
+        const triggerBottom = window.innerHeight * 0.8;
+        
+        counters.forEach(counter => {
+            const counterTop = counter.getBoundingClientRect().top;
+            
+            if (counterTop < triggerBottom) {
+                animateCounter(counter);
+                countersAnimated = true;
+            }
+        });
+    }
+
+    window.addEventListener('scroll', checkCounters);
+    checkCounters();
+
+    // ========== SMOOTH SCROLL ==========
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && document.querySelector(href)) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // ========== SKILL ITEMS STAGGER ANIMATION ==========
+    const skillItems = document.querySelectorAll('.skill-item');
+    skillItems.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.1}s`;
+    });
+
+    // ========== PROJECT CARDS STAGGER ANIMATION ==========
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card, index) => {
+        card.style.animationDelay = `${index * 0.2}s`;
+    });
 </script>
 
 </html>
