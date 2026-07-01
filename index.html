@@ -14,13 +14,6 @@
 </head>
 
 <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-        <div class="loader">
-            <div class="spinner"></div>
-            <p>Loading Portfolio...</p>
-        </div>
-    </div>
 
     <!-- Scroll to Top Button -->
     <button id="scrollToTop" class="scroll-to-top">
@@ -245,55 +238,95 @@
 </body>
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-    // ========== LOADING SCREEN ==========
-    window.addEventListener('load', function() {
-        setTimeout(() => {
-            document.getElementById('loading-screen').style.opacity = '0';
-            setTimeout(() => {
-                document.getElementById('loading-screen').style.display = 'none';
-            }, 500);
-        }, 1000);
-    });
-
     // ========== PARTICLES BACKGROUND ==========
-    particlesJS('particles-js', {
+    if (typeof particlesJS !== "undefined") {
+    particlesJS("particles-js", {
         particles: {
-            number: { value: 80, density: { enable: true, value_area: 800 } },
-            color: { value: '#ff4c60' },
-            shape: { type: 'circle' },
-            opacity: { value: 0.5, random: false },
-            size: { value: 3, random: true },
+            number: {
+                value: 80,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            color: {
+                value: "#ff4c60"
+            },
+            shape: {
+                type: "circle"
+            },
+            opacity: {
+                value: 0.5
+            },
+            size: {
+                value: 3,
+                random: true
+            },
             line_linked: {
                 enable: true,
                 distance: 150,
-                color: '#ff4c60',
+                color: "#ff4c60",
                 opacity: 0.4,
                 width: 1
             },
             move: {
                 enable: true,
-                speed: 2,
-                direction: 'none',
-                random: false,
-                straight: false,
-                out_mode: 'out',
-                bounce: false
+                speed: 2
             }
         },
         interactivity: {
-            detect_on: 'canvas',
             events: {
-                onhover: { enable: true, mode: 'repulse' },
-                onclick: { enable: true, mode: 'push' },
-                resize: true
-            },
-            modes: {
-                repulse: { distance: 100, duration: 0.4 },
-                push: { particles_nb: 4 }
+                onhover: {
+                    enable: true,
+                    mode: "repulse"
+                },
+                onclick: {
+                    enable: true,
+                    mode: "push"
+                }
             }
         },
         retina_detect: true
     });
+// }
+//     particlesJS('particles-js', {
+//         particles: {
+//             number: { value: 80, density: { enable: true, value_area: 800 } },
+//             color: { value: '#ff4c60' },
+//             shape: { type: 'circle' },
+//             opacity: { value: 0.5, random: false },
+//             size: { value: 3, random: true },
+//             line_linked: {
+//                 enable: true,
+//                 distance: 150,
+//                 color: '#ff4c60',
+//                 opacity: 0.4,
+//                 width: 1
+//             },
+//             move: {
+//                 enable: true,
+//                 speed: 2,
+//                 direction: 'none',
+//                 random: false,
+//                 straight: false,
+//                 out_mode: 'out',
+//                 bounce: false
+//             }
+//         },
+//         interactivity: {
+//             detect_on: 'canvas',
+//             events: {
+//                 onhover: { enable: true, mode: 'repulse' },
+//                 onclick: { enable: true, mode: 'push' },
+//                 resize: true
+//             },
+//             modes: {
+//                 repulse: { distance: 100, duration: 0.4 },
+//                 push: { particles_nb: 4 }
+//             }
+//         },
+//         retina_detect: true
+//     });
 
     // ========== TYPING ANIMATION ==========
     const texts = ['Software Developer', 'FullStack Developer', 'Problem Solver', 'Code Enthusiast'];
